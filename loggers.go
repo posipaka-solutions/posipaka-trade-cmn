@@ -20,13 +20,25 @@ func InitLoggers(logFileName string) {
 		panic("Too long log file name")
 	}
 
+	var logStream io.Writer
 	if len(logFileName) == 0 {
-		LogInfo = log.New(os.Stdout, "[INFO]: ", log.Ldate|log.Ltime|log.Lmicroseconds|log.Lmsgprefix)
-		LogWarning = log.New(os.Stdout, "[WARNING]: ", log.Ldate|log.Ltime|log.Lmicroseconds|log.Lmsgprefix)
-		LogError = log.New(os.Stdout, "[ERROR]: ", log.Ldate|log.Ltime|log.Lmicroseconds|log.Lmsgprefix)
-		return
+		logStream = os.Stdout
+	} else {
+		createLogsDir()
+
+		fStream, err := os.OpenFile(fmt.Sprintf("%s/%s.log", logsDir, logFileName), os.O_APPEND|os.O_CREATE|os.O_WRONLY, 0666)
+		if err != nil {
+			panic(err)
+		}
+		logStream = io.MultiWriter(os.Stdout, fStream)
 	}
 
+	LogInfo = log.New(logStream, "[INFO]: ", log.Ldate|log.Ltime|log.Lmicroseconds|log.Lmsgprefix)
+	LogWarning = log.New(logStream, "[WARNING]: ", log.Ldate|log.Ltime|log.Lmicroseconds|log.Lmsgprefix)
+	LogError = log.New(logStream, "[ERROR]: ", log.Ldate|log.Ltime|log.Lmicroseconds|log.Lmsgprefix)
+}
+
+func createLogsDir() {
 	if _, err := os.Stat(logsDir); err != nil {
 		if os.IsNotExist(err) {
 			err = os.Mkdir(logsDir, 0666)
@@ -37,14 +49,4 @@ func InitLoggers(logFileName string) {
 			panic(err.Error())
 		}
 	}
-
-	fStream, err := os.OpenFile(fmt.Sprintf("%s/%s.log", logsDir, logFileName), os.O_APPEND|os.O_CREATE|os.O_WRONLY, 0666)
-	if err != nil {
-		panic(err)
-	}
-
-	logWriter := io.MultiWriter(os.Stdout, fStream)
-	LogInfo = log.New(logWriter, "[INFO]: ", log.Ldate|log.Ltime|log.Lmicroseconds|log.Lmsgprefix)
-	LogWarning = log.New(logWriter, "[WARNING]: ", log.Ldate|log.Ltime|log.Lmicroseconds|log.Lmsgprefix)
-	LogError = log.New(logWriter, "[ERROR]: ", log.Ldate|log.Ltime|log.Lmicroseconds|log.Lmsgprefix)
 }
