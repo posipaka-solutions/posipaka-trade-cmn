@@ -1,2 +1,3 @@
-# common
-Common files for all projects
+# posipaka-trade-cmn
+
+Common sources for all projects
