@@ -8,11 +8,6 @@ type ApiKey struct {
 	Passphrase string
 }
 
-type ExchangeManager struct {
-	ApiKey ApiKey
-	Client http.Client
-}
-
 type ApiConnector interface {
 	SetOrder(parameters OrderParameters) (float64, error)
 
