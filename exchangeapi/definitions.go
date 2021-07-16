@@ -49,5 +49,5 @@ type OrderInfo struct {
 	Symbol    string
 	OrderType string
 	Price     float64
-	Size      float64
+	Quantity  float64
 }
