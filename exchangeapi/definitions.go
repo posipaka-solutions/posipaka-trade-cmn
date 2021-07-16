@@ -9,8 +9,8 @@ type ApiKey struct {
 }
 
 type ExchangeManager struct {
-	apiKey ApiKey
-	client http.Client
+	ApiKey ApiKey
+	Client http.Client
 }
 
 type ApiConnector interface {
