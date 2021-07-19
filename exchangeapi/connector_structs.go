@@ -19,11 +19,11 @@ type ApiConnector interface {
 }
 
 type OrderParameters struct {
-	Symbol    string
-	Side      string
-	OrderType int
-	Quantity  float64
-	Price     float64
+	Symbol   string
+	Side     OrderSide
+	Type     OrderType
+	Quantity float64
+	Price    float64
 }
 
 type SymbolLimits struct {
