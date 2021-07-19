@@ -8,18 +8,23 @@ type ApiKey struct {
 	Passphrase string
 }
 
+type AssetsSymbol struct {
+	Base  string
+	Quote string
+}
+
 type ApiConnector interface {
 	SetOrder(parameters OrderParameters) (float64, error)
 
-	GetCurrentPrice(symbol string) (float64, error)
-	GetSymbolLimits(symbol string) (SymbolLimits, error)
+	GetCurrentPrice(symbol AssetsSymbol) (float64, error)
+	GetSymbolLimits(symbol AssetsSymbol) (SymbolLimits, error)
 	GetOrdersList() ([]OrderInfo, error)
 
 	GetServerTime() (uint64, error)
 }
 
 type OrderParameters struct {
-	Symbol   string
+	Symbol   AssetsSymbol
 	Side     OrderSide
 	Type     OrderType
 	Quantity float64
@@ -27,16 +32,16 @@ type OrderParameters struct {
 }
 
 type SymbolLimits struct {
-	symbol string
+	Symbol AssetsSymbol
 
-	baseMinSize  float64
-	baseMaxSize  float64
-	quoteMinSize float64
-	quoteMaxSize float64
+	BaseMinSize  float64
+	BaseMaxSize  float64
+	QuoteMinSize float64
+	QuoteMaxSize float64
 
-	baseIncrement  float64
-	quoteIncrement float64
-	priceIncrement float64
+	BaseIncrement  float64
+	QuoteIncrement float64
+	PriceIncrement float64
 }
 
 type OrderInfo struct {
