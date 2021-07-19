@@ -1,7 +1,5 @@
 package exchangeapi
 
-import "net/http"
-
 type ApiKey struct {
 	Key        string
 	Secret     string
