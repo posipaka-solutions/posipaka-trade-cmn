@@ -16,7 +16,7 @@ type ApiConnector interface {
 
 	GetCurrentPrice(symbol AssetsSymbol) (float64, error)
 	GetSymbolLimits(symbol AssetsSymbol) (SymbolLimits, error)
-	// GetOrdersList() ([]OrderInfo, error) TODO for better times
+	GetOrdersList() ([]OrderInfo, error)
 
 	GetServerTime() (uint64, error)
 }
