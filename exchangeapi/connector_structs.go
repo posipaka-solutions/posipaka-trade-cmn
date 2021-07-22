@@ -43,9 +43,9 @@ type SymbolLimits struct {
 }
 
 type OrderInfo struct {
-	Id        string
-	Symbol    string
-	OrderType string
-	Price     float64
-	Quantity  float64
+	Id       string
+	Status   OrderStatus
+	Type     OrderType
+	Price    float64
+	Quantity float64
 }
