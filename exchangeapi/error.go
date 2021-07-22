@@ -15,11 +15,8 @@ const (
 	ConnectorErr
 )
 
-var EmptyResponseErr = ExchangeError{
-	Type:    ConnectorErr,
-	Code:    1001,
-	Message: "Exchange response is empty",
-}
+const emptyResponseErrorCode = 1001
+const emptyResponseErrorMsg = "Exchange response is empty"
 
 func (err *ExchangeError) Error() string {
 	return fmt.Sprint("[ExchangeError] -> ", err.Message)
