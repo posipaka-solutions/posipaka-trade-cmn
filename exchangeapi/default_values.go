@@ -18,3 +18,12 @@ const (
 	Buy OrderSide = iota
 	Sell
 )
+
+type OrderStatus int
+
+const (
+	Unknown OrderStatus = iota
+	Active
+	Canceled
+	Filled
+)
