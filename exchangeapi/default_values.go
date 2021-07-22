@@ -22,8 +22,11 @@ const (
 type OrderStatus int
 
 const (
-	Unknown OrderStatus = iota
-	Active
-	Canceled
+	New OrderStatus = iota
+	PartiallyFilled
 	Filled
+	Cancel
+	PendingCancel
+	Rejected
+	Expired
 )
