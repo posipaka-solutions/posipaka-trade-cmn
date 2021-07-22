@@ -10,6 +10,7 @@ type OrderType int
 const (
 	Limit OrderType = iota
 	Market
+	OtherType
 )
 
 type OrderSide int
@@ -17,15 +18,16 @@ type OrderSide int
 const (
 	Buy OrderSide = iota
 	Sell
+	OtherSide
 )
 
 type OrderStatus int
 
 const (
-	New OrderStatus = iota
+	NewOrder OrderStatus = iota
 	Filled
 	Canceled
 	Rejected
 	Expired
-	Other
+	OtherStatus
 )
