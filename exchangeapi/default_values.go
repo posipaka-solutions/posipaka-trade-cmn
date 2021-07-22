@@ -23,10 +23,9 @@ type OrderStatus int
 
 const (
 	New OrderStatus = iota
-	PartiallyFilled
 	Filled
-	Cancel
-	PendingCancel
+	Canceled
 	Rejected
 	Expired
+	Other
 )

@@ -8,15 +8,15 @@ type ExchangeError struct {
 	Message string
 }
 
-const (
-	HttpErr = iota
-	BinanceErr
-	KucoinErr
-	ConnectorErr
-)
-
-const EmptyResponseErrorCode = 1001
-const EmptyResponseErrorMsg = "Exchange response is empty"
+//const (
+//	HttpErr = iota
+//	BinanceErr
+//	KucoinErr
+//	ConnectorErr
+//)
+//
+//const EmptyResponseErrorCode = 1001
+//const EmptyResponseErrorMsg = "Exchange response is empty"
 
 func (err *ExchangeError) Error() string {
 	return fmt.Sprint("[ExchangeError] -> ", err.Message)
