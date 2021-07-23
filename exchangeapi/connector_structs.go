@@ -49,3 +49,18 @@ type OrderInfo struct {
 	Price    float64
 	Quantity float64
 }
+
+type Candlesticks struct {
+	OpenTime                 int64  `json:"openTime"`
+	Open                     string `json:"open"`
+	High                     string `json:"high"`
+	Low                      string `json:"low"`
+	Close                    string `json:"close"`
+	Volume                   string `json:"volume"`
+	CloseTime                int64  `json:"closeTime"`
+	QuoteAssetVolume         string `json:"quoteAssetVolume"`
+	NumberOfTrade            int64  `json:"numberOfTrade"`
+	TakerBuyBaseAssetVolume  string `json:"takerBuyBaseAssetVolume"`
+	TakerBuyQuoteAssetVolume string `json:"takerBuyQuoteAssetVolume"`
+	Ignore                   string `json:"ignore"`
+}
