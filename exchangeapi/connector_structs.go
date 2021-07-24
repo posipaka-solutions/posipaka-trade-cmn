@@ -1,6 +1,8 @@
 package exchangeapi
 
-import "time"
+import (
+	"github.com/posipaka-trade/posipaka-trade-cmn/exchangeapi/order"
+)
 
 type ApiKey struct {
 	Key        string
@@ -14,21 +16,13 @@ type AssetsSymbol struct {
 }
 
 type ApiConnector interface {
-	SetOrder(parameters OrderParameters) (float64, error)
+	SetOrder(parameters order.Parameters) (float64, error)
 
 	GetCurrentPrice(symbol AssetsSymbol) (float64, error)
 	GetSymbolLimits(symbol AssetsSymbol) (SymbolLimits, error)
-	GetOrdersList() ([]OrderInfo, error)
+	GetOrdersList() ([]order.Info, error)
 
 	GetServerTime() (uint64, error)
-}
-
-type OrderParameters struct {
-	Symbol   AssetsSymbol
-	Side     OrderSide
-	Type     OrderType
-	Quantity float64
-	Price    float64
 }
 
 type SymbolLimits struct {
@@ -42,18 +36,4 @@ type SymbolLimits struct {
 	BaseIncrement  float64
 	QuoteIncrement float64
 	PriceIncrement float64
-}
-
-type OrderInfo struct {
-	Id     string
-	Symbol string
-	Status OrderStatus
-	Type   OrderType
-
-	Price         float64
-	BaseQuantity  float64
-	QuoteQuantity float64
-	Commission    float64
-
-	TransactionTime time.Time
 }
