@@ -1,5 +1,7 @@
 package exchangeapi
 
+import "time"
+
 type ApiKey struct {
 	Key        string
 	Secret     string
@@ -43,9 +45,15 @@ type SymbolLimits struct {
 }
 
 type OrderInfo struct {
-	Id       string
-	Status   OrderStatus
-	Type     OrderType
-	Price    float64
-	Quantity float64
+	Id     string
+	Symbol string
+	Status OrderStatus
+	Type   OrderType
+
+	Price         float64
+	BaseQuantity  float64
+	QuoteQuantity float64
+	Commission    float64
+
+	TransactionTime time.Time
 }
