@@ -31,6 +31,6 @@ type CandleStick struct {
 	MaxPrice   float64
 	MinPrice   float64
 
+	Volume       float64
 	TradesNumber float64
-	AssetVolume  float64
 }
