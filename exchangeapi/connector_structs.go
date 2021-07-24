@@ -22,7 +22,7 @@ type ApiConnector interface {
 	GetServerTime() (uint64, error)
 }
 
-type CandleStick struct {
+type Candlestick struct {
 	OpenTime  time.Time
 	CloseTime time.Time
 
