@@ -3,6 +3,7 @@ package exchangeapi
 import (
 	"github.com/posipaka-trade/posipaka-trade-cmn/exchangeapi/order"
 	"github.com/posipaka-trade/posipaka-trade-cmn/exchangeapi/symbol"
+	"time"
 )
 
 type ApiKey struct {
@@ -19,4 +20,17 @@ type ApiConnector interface {
 	GetOrdersList() ([]order.Info, error)
 
 	GetServerTime() (uint64, error)
+}
+
+type CandleStick struct {
+	OpenTime  time.Time
+	CloseTime time.Time
+
+	OpenPrice  float64
+	ClosePrice float64
+	MaxPrice   float64
+	MinPrice   float64
+
+	TradesNumber float64
+	AssetVolume  float64
 }
