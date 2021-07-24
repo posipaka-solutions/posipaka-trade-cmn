@@ -1,7 +1,7 @@
 package order
 
 import (
-	"github.com/posipaka-trade/posipaka-trade-cmn/exchangeapi"
+	"github.com/posipaka-trade/posipaka-trade-cmn/exchangeapi/symbol"
 	"time"
 )
 
@@ -33,7 +33,7 @@ const (
 )
 
 type Parameters struct {
-	Symbol   exchangeapi.AssetsSymbol
+	Assets   symbol.Assets
 	Side     Side
 	Type     Type
 	Quantity float64
@@ -42,7 +42,7 @@ type Parameters struct {
 
 type Info struct {
 	Id     string
-	Symbol string
+	Assets symbol.Assets
 	Status Status
 	Type   Type
 
