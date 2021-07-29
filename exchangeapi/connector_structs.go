@@ -32,5 +32,5 @@ type Candlestick struct {
 	MinPrice   float64
 
 	Volume       float64
-	TradesNumber float64
+	TradesNumber int
 }
