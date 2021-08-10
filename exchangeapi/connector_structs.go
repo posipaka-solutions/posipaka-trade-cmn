@@ -19,7 +19,7 @@ type ApiConnector interface {
 	GetSymbolLimits(assets symbol.Assets) (symbol.Limits, error)
 	GetOrdersList() ([]order.Info, error)
 
-	GetServerTime() (uint64, error)
+	GetServerTime() (time.Time, error)
 }
 
 type Candlestick struct {
