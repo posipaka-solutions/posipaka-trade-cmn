@@ -17,4 +17,5 @@ type LimitDetail struct {
 	MinSize   float64
 	MaxSize   float64
 	Increment float64
+	Precision int
 }
