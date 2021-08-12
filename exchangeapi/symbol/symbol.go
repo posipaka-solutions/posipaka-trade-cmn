@@ -8,15 +8,13 @@ type Assets struct {
 type Limits struct {
 	Assets Assets
 
-	BaseMinSize   float64
-	BaseMaxSize   float64
-	BaseIncrement float64
+	Base  LimitDetail
+	Quote LimitDetail
+	Price LimitDetail
+}
 
-	QuoteMinSize   float64
-	QuoteMaxSize   float64
-	QuoteIncrement float64
-
-	PriceMinSize   float64
-	PriceMaxSize   float64
-	PriceIncrement float64
+type LimitDetail struct {
+	MinSize   float64
+	MaxSize   float64
+	Increment float64
 }
