@@ -5,6 +5,11 @@ type Assets struct {
 	Quote string
 }
 
+func (assets Assets) IsEqual(otherAssets Assets) bool {
+	return assets.Base == otherAssets.Base &&
+		assets.Quote == otherAssets.Quote
+}
+
 type Limits struct {
 	Assets Assets
 
