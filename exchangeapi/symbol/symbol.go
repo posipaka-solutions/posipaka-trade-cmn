@@ -10,6 +10,11 @@ func (assets Assets) IsEqual(otherAssets Assets) bool {
 		assets.Quote == otherAssets.Quote
 }
 
+func (assets Assets) IsEmpty() bool {
+	return len(assets.Base) == 0 &&
+		len(assets.Quote) == 0
+}
+
 type Limits struct {
 	Assets Assets
 
