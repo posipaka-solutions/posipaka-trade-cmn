@@ -20,6 +20,8 @@ type ApiConnector interface {
 	GetOrdersList(assets symbol.Assets) ([]order.Info, error)
 	AddLimits(limits symbol.Limits)
 
+	GetAssetBalance(asset string) (float64, error)
+
 	GetServerTime() (time.Time, error)
 }
 
