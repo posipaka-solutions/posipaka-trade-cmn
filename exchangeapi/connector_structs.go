@@ -16,9 +16,8 @@ type ApiConnector interface {
 	SetOrder(parameters order.Parameters) (float64, error)
 
 	GetCurrentPrice(assets symbol.Assets) (float64, error)
-	GetSymbolLimits(assets symbol.Assets) (symbol.Limits, error)
+	GetSymbolLimits(assets symbol.Assets) ([]symbol.Limits, error)
 	GetOrdersList(assets symbol.Assets) ([]order.Info, error)
-	AddLimits(limits symbol.Limits)
 
 	BalancesInfo(quote string) (float64, error)
 
