@@ -111,7 +111,7 @@ func (mr *MockApiConnectorMockRecorder) GetServerTime() *gomock.Call {
 // GetSymbolLimits mocks base method.
 func (m *MockApiConnector) GetSymbolLimits(arg0 symbol.Assets) (symbol.Limits, error) {
 	m.ctrl.T.Helper()
-	ret := m.ctrl.Call(m, "GetSymbolLimits", arg0)
+	ret := m.ctrl.Call(m, "GetSymbolsLimits", arg0)
 	ret0, _ := ret[0].(symbol.Limits)
 	ret1, _ := ret[1].(error)
 	return ret0, ret1
@@ -120,7 +120,7 @@ func (m *MockApiConnector) GetSymbolLimits(arg0 symbol.Assets) (symbol.Limits, e
 // GetSymbolLimits indicates an expected call of GetSymbolLimits.
 func (mr *MockApiConnectorMockRecorder) GetSymbolLimits(arg0 interface{}) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
-	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "GetSymbolLimits", reflect.TypeOf((*MockApiConnector)(nil).GetSymbolLimits), arg0)
+	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "GetSymbolsLimits", reflect.TypeOf((*MockApiConnector)(nil).GetSymbolLimits), arg0)
 }
 
 // GetSymbolsList mocks base method.

@@ -18,7 +18,7 @@ type ApiConnector interface {
 	GetCurrentPrice(assets symbol.Assets) (float64, error)
 	GetAssetBalance(asset string) (float64, error)
 
-	GetSymbolLimits() ([]symbol.Limits, error)
+	GetSymbolsLimits() ([]symbol.Limits, error)
 	GetOrdersList(assets symbol.Assets) ([]order.Info, error)
 	StoreSymbolsLimits([]symbol.Limits)
 
