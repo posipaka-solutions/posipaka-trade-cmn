@@ -4,4 +4,5 @@ package exchangeapi
 const (
 	BinanceEx = "binance"
 	KucoinEx  = "kucoin"
+	GateIo    = "gateio"
 )
