@@ -21,15 +21,21 @@ func Init(logFileName string, writeToConsole bool) {
 	}
 
 	var logStream io.Writer
-	createLogsDir()
-	fStream, err := os.OpenFile(fmt.Sprintf("%s/%s.log", logsDir, logFileName), os.O_APPEND|os.O_CREATE|os.O_WRONLY, 0666)
-	if err != nil {
-		panic(err)
-	}
-	if writeToConsole {
-		logStream = io.MultiWriter(os.Stdout, fStream)
+	if len(logFileName) == 0 && !writeToConsole {
+		panic("Logger initialization failed")
 	} else {
-		logStream = io.MultiWriter(fStream)
+		if len(logFileName) != 0 {
+			createLogsDir()
+			fStream, err := os.OpenFile(fmt.Sprintf("%s/%s.log", logsDir, logFileName), os.O_APPEND|os.O_CREATE|os.O_WRONLY, 0667)
+			if err != nil {
+				panic(err)
+			}
+			logStream = io.MultiWriter(fStream)
+		}
+
+		if writeToConsole {
+			logStream = io.MultiWriter(logStream, os.Stdout)
+		}
 	}
 
 	Info = log.New(logStream, "[INFO]: ", log.Ldate|log.Ltime|log.Lmicroseconds|log.Lmsgprefix)
