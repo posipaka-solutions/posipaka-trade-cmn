@@ -46,7 +46,7 @@ func Init(logFileName string, writeToConsole bool) {
 func createLogsDir() {
 	if _, err := os.Stat(logsDir); err != nil {
 		if os.IsNotExist(err) {
-			err = os.Mkdir(logsDir, 0666)
+			err = os.Mkdir(logsDir, 0777)
 			if err != nil {
 				panic(err.Error())
 			}
