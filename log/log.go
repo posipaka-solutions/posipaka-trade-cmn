@@ -26,7 +26,7 @@ func Init(logFileName string, writeToConsole bool) {
 	} else {
 		if len(logFileName) != 0 {
 			createLogsDir()
-			fStream, err := os.OpenFile(fmt.Sprintf("%s/%s.log", logsDir, logFileName), os.O_APPEND|os.O_CREATE|os.O_WRONLY, 0667)
+			fStream, err := os.OpenFile(fmt.Sprintf("%s/%s.log", logsDir, logFileName), os.O_APPEND|os.O_CREATE|os.O_WRONLY, 0777)
 			if err != nil {
 				panic(err)
 			}
