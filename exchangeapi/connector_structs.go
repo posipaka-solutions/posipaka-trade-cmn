@@ -13,7 +13,7 @@ type ApiKey struct {
 }
 
 type ApiConnector interface {
-	SetOrder(parameters order.Parameters) (float64, error)
+	SetOrder(parameters order.Parameters) (order.OrderInfo, error)
 
 	GetCurrentPrice(assets symbol.Assets) (float64, error)
 	GetAssetBalance(asset string) (float64, error)
