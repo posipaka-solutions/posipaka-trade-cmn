@@ -34,7 +34,11 @@ func Init(logFileName string, writeToConsole bool) {
 		}
 
 		if writeToConsole {
-			logStream = io.MultiWriter(logStream, os.Stdout)
+			if len(logFileName) != 0 {
+				logStream = io.MultiWriter(logStream, os.Stdout)
+			} else {
+				logStream = os.Stdout
+			}
 		}
 	}
 
