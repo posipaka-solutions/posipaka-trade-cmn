@@ -55,6 +55,7 @@ type Info struct {
 }
 
 type OrderInfo struct {
+	Id       int
 	Price    float64
 	Quantity float64
 }
