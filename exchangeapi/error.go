@@ -3,9 +3,10 @@ package exchangeapi
 import "fmt"
 
 type ExchangeError struct {
-	Type    int
-	Code    int
-	Message string
+	Type        int
+	Code        int
+	Message     string
+	KeysDetails map[string]string
 }
 
 const (
