@@ -53,3 +53,8 @@ type Info struct {
 
 	TransactionTime time.Time
 }
+
+type OrderInfo struct {
+	Price    float64
+	Quantity float64
+}
