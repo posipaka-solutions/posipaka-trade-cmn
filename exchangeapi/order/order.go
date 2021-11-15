@@ -8,17 +8,17 @@ import (
 type Type int
 
 const (
-	Limit Type = iota
+	UnknownType Type = iota
+	Limit
 	Market
-	OtherType
 )
 
 type Side int
 
 const (
-	Buy Side = iota
+	UnknownSide Side = iota
+	Buy
 	Sell
-	OtherSide
 )
 
 type Status int
