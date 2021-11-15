@@ -24,12 +24,11 @@ const (
 type Status int
 
 const (
-	New Status = iota
+	Unknown Status = iota
+	Open
 	Filled
 	Canceled
-	Rejected
 	Expired
-	OtherStatus
 )
 
 // Parameters contains all available and needed parameter for order setting at exchange
