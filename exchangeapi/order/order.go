@@ -24,7 +24,7 @@ const (
 type Status int
 
 const (
-	Unknown Status = iota
+	UnknownStatus Status = iota
 	Open
 	Filled
 	Canceled
