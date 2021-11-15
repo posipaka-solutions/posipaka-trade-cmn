@@ -13,14 +13,15 @@ type ApiKey struct {
 }
 
 type ApiConnector interface {
-	SetOrder(parameters order.Parameters) (order.OrderInfo, error)
+	SetOrder(parameters order.Parameters) (order.Info, error)
 
 	GetCurrentPrice(assets symbol.Assets) (float64, error)
 	GetAssetBalance(asset string) (float64, error)
 
 	GetSymbolsLimits() ([]symbol.Limits, error)
-	GetOrdersList(assets symbol.Assets) ([]order.Info, error)
 	StoreSymbolsLimits([]symbol.Limits)
+	GetOrdersList(assets symbol.Assets) ([]order.Info, error)
+	GetOrderInfo(orderId string) (order.Info, error)
 
 	GetSymbolsList() []symbol.Assets
 	GetServerTime() (time.Time, error)
