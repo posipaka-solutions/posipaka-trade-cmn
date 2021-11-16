@@ -44,7 +44,6 @@ type Parameters struct {
 type Info struct {
 	Id     string
 	Assets symbol.Assets
-	Side   Side
 	Status Status
 	Type   Type
 
