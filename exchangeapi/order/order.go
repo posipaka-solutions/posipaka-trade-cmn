@@ -26,10 +26,8 @@ type Status int
 const (
 	UnknownStatus Status = iota
 	Open
-	PartiallyFilled
 	Filled
 	Canceled
-	Rejected
 	Expired
 )
 
