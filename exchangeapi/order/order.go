@@ -48,10 +48,7 @@ type Info struct {
 	Status Status
 	Type   Type
 
-	// Price match price set on Limit order
-	Price float64
-	// FilledPrice match resulting price when Market or Limit order is Filled
-	FilledPrice   float64
+	Price         float64
 	BaseQuantity  float64
 	QuoteQuantity float64
 	Commission    float64
