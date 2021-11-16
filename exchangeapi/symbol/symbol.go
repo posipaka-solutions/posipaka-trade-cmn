@@ -15,7 +15,6 @@ func (assets Assets) IsEmpty() bool {
 		len(assets.Quote) == 0
 }
 
-// Limits describes limits for certain crypto pair
 type Limits struct {
 	Assets Assets
 
@@ -24,7 +23,6 @@ type Limits struct {
 	Price LimitDetail
 }
 
-// LimitDetail contains common details for fields in Limits
 type LimitDetail struct {
 	MinSize   float64
 	MaxSize   float64

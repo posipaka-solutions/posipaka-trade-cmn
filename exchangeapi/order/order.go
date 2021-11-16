@@ -32,7 +32,6 @@ const (
 	OtherStatus
 )
 
-// Parameters contains all available and needed parameter for order setting at exchange
 type Parameters struct {
 	Assets   symbol.Assets
 	Side     Side
@@ -41,7 +40,6 @@ type Parameters struct {
 	Price    float64
 }
 
-// Info has a description about order at exchange
 type Info struct {
 	Id     string
 	Assets symbol.Assets
@@ -54,4 +52,9 @@ type Info struct {
 	Commission    float64
 
 	TransactionTime time.Time
+}
+
+type OrderInfo struct {
+	Price    float64
+	Quantity float64
 }
