@@ -20,7 +20,7 @@ type ApiConnector interface {
 
 	GetSymbolsLimits() ([]symbol.Limits, error)
 	GetOrdersList(assets symbol.Assets) ([]order.Info, error)
-	StoreSymbolsLimits([]symbol.Limits)
+	GetOrderInfo(orderId string, symbol symbol.Assets) (order.Info, error)
 
 	GetSymbolsList() []symbol.Assets
 	GetServerTime() (time.Time, error)
