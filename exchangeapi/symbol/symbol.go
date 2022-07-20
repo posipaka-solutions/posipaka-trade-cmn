@@ -29,3 +29,8 @@ type LimitDetail struct {
 	Increment float64
 	Precision int
 }
+
+type AssetInfo struct {
+	Symbol string
+	Price  float64
+}
