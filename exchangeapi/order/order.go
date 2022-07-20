@@ -41,11 +41,11 @@ type Parameters struct {
 }
 
 type Info struct {
-	Id     string
-	Assets symbol.Assets
-	Status Status
-	Type   Type
-
+	Id            string
+	Assets        symbol.Assets
+	Status        Status
+	Type          Type
+	Side          Side
 	Price         float64
 	BaseQuantity  float64
 	QuoteQuantity float64
