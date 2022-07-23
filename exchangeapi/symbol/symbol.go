@@ -34,3 +34,7 @@ type AssetInfo struct {
 	Symbol string
 	Price  float64
 }
+
+type OrderBook struct {
+	Price, Quantity float64
+}
