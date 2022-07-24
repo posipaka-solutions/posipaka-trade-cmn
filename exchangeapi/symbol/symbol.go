@@ -36,5 +36,10 @@ type AssetInfo struct {
 }
 
 type OrderBook struct {
+	Bid []BidAsk
+	Ask []BidAsk
+}
+
+type BidAsk struct {
 	Price, Quantity float64
 }
