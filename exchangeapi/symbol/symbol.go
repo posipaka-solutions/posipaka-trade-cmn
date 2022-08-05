@@ -30,6 +30,11 @@ type LimitDetail struct {
 	Precision int
 }
 
+type AssetPrice struct {
+	Symbol Assets
+	Price  float64
+}
+
 type ArbitrageAsset struct {
 	Symbol    Assets
 	Price     float64
