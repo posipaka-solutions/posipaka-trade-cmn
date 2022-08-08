@@ -35,6 +35,17 @@ type AssetPrice struct {
 	Price  float64
 }
 
+type ArbitrageAsset struct {
+	Symbol    Assets
+	Price     float64
+	UsdtPrice float64
+}
+
+type AllPricesList struct {
+	Symbol string
+	Price  float64
+}
+
 type OrderBook struct {
 	Bid []BidAsk
 	Ask []BidAsk
