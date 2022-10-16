@@ -13,7 +13,10 @@ var (
 	Error   *log.Logger
 )
 
-const logsDir = "logs"
+const (
+	logsDir     = "logs"
+	loggerFlags = log.Ldate | log.Ltime | log.Lmicroseconds | log.Lshortfile | log.Lmsgprefix
+)
 
 func Init(logFileName string, writeToConsole bool) {
 	if len(logFileName) > 64 {
@@ -42,9 +45,9 @@ func Init(logFileName string, writeToConsole bool) {
 		}
 	}
 
-	Info = log.New(logStream, "[INFO]: ", log.Ldate|log.Ltime|log.Lmicroseconds|log.Lmsgprefix)
-	Warning = log.New(logStream, "[WARNING]: ", log.Ldate|log.Ltime|log.Lmicroseconds|log.Lmsgprefix)
-	Error = log.New(logStream, "[ERROR]: ", log.Ldate|log.Ltime|log.Lmicroseconds|log.Lmsgprefix)
+	Info = log.New(logStream, "[INFO]: ", loggerFlags)
+	Warning = log.New(logStream, "[WARNING]: ", loggerFlags)
+	Error = log.New(logStream, "[ERROR]: ", loggerFlags)
 }
 
 func createLogsDir() {
